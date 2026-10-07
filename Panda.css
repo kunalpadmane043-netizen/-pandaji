@@ -1,0 +1,324 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff758c,
+            #ff7eb3,
+            #ffd1dc
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+}
+
+/* Main Container */
+
+.container {
+    width: 100%;
+    padding: 25px;
+
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* Card */
+
+.card {
+    width: 100%;
+    max-width: 620px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    padding: 40px 30px;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation: showCard 1.2s ease;
+}
+
+/* Heart */
+
+.top-heart {
+    font-size: 65px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+/* Heading */
+
+h1 {
+    margin-top: 15px;
+
+    font-size: 42px;
+
+    color: #e91e63;
+}
+
+.subtitle {
+    margin-top: 10px;
+
+    font-size: 18px;
+
+    color: #777;
+}
+
+/* Letter */
+
+.letter {
+    margin-top: 25px;
+
+    padding: 25px;
+
+    background: #fff0f5;
+
+    border-radius: 20px;
+
+    color: #444;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    text-align: left;
+}
+
+.letter p {
+    margin-bottom: 15px;
+}
+
+.special {
+    text-align: center;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #e91e63;
+}
+
+.sorry {
+    text-align: center;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    color: #e91e63;
+}
+
+/* Button */
+
+button {
+    margin-top: 25px;
+
+    padding: 16px 40px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #e91e63;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(233, 30, 99, 0.3);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    background: #c2185b;
+}
+
+/* Answer */
+
+.hidden {
+    display: none;
+}
+
+#answer {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: #fff5f8;
+
+    border-radius: 20px;
+
+    animation: showAnswer 1s ease;
+}
+
+#answer h2 {
+    color: #e91e63;
+
+    margin-bottom: 12px;
+}
+
+.big-heart {
+    font-size: 80px;
+
+    animation: heartbeat 1s infinite;
+}
+
+.forever {
+    margin-top: 15px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #e91e63;
+}
+
+/* Floating Hearts */
+
+.heart {
+    position: fixed;
+
+    bottom: -40px;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    animation: floatHeart 5s linear forwards;
+
+    z-index: 1;
+}
+
+/* Animations */
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes showCard {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+@keyframes showAnswer {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 30px 18px;
+
+        border-radius: 25px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .top-heart {
+        font-size: 55px;
+    }
+
+    .letter {
+        padding: 20px;
+
+        font-size: 15px;
+    }
+
+    .special {
+        font-size: 21px;
+    }
+
+    button {
+        padding: 14px 30px;
+
+        font-size: 16px;
+    }
+}
